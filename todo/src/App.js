@@ -5,8 +5,25 @@ import { dataBase } from './firebase_config';
 import firebase from "firebase";
 
 function App() {
+  const[todos, setTodos] = useState("");
 
   const [todoInput, setTodoInput] = useState('');
+
+  useEffect(() => {
+   getTodos();
+  }, []);
+
+  function getTodos() {
+    dataBase.collection("todos").onSnapshot(function (querySnapshot) {
+      setTodos(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          todo: doc.data().todo,
+          inprogress: doc.data().inprogress
+        }))
+      );
+    });
+  }
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -38,6 +55,9 @@ function App() {
           add
         </Button>
       </form>
+      {todos.map((todo) =>(
+        <p>{todo.todo}</p>
+        ))}
     </div>
   );
 }
