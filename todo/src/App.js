@@ -5,13 +5,14 @@ import { dataBase } from './firebase_config';
 import firebase from "firebase";
 
 function App() {
-  const[todos, setTodos] = useState("");
+  const[todos, setTodos] = useState([]);
 
-  const [todoInput, setTodoInput] = useState('');
-
+  const [todoInput, setTodoInput] = useState("");
+  
   useEffect(() => {
-   getTodos();
+    getTodos();
   }, []);
+  //blank to run only on first opening
 
   function getTodos() {
     dataBase.collection("todos").onSnapshot(function (querySnapshot) {
@@ -24,8 +25,10 @@ function App() {
       );
     });
   }
+  
+  
 
-  const addTodo = (e) => {
+  function addTodo(e) {
     e.preventDefault();
     dataBase.collection("todos").add({
       inprogress: true,
