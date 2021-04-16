@@ -34,7 +34,7 @@ function App() {
   function addTodo(e) {
     e.preventDefault();
     if(todoInput === "") {
-    alert("please enter text!");
+    alert("PLEASE ENTER SOMETHING ATLEAST!!");
   } else {
     dataBase.collection("todos").add({
       inprogress: true,
