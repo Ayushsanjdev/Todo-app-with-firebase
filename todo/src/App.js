@@ -52,8 +52,8 @@ function App() {
       <TextField
       value={todoInput}
       onChange={(e) => 
-        setTodoInput(e.target.value)} id="standard-basic" label="get it done" 
-        style={{maxWidth: "300px", width: "90vw"}}/>
+        setTodoInput(e.target.value)} id="standard-basic" label="Get it done" 
+        style={{maxWidth: "400px", width: "90vw"}}/>
 
         <Button variant="contained" type="submit" onClick={addTodo} style={{display: "none"}}>
           add
