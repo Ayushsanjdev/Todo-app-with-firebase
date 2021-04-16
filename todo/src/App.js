@@ -1,8 +1,9 @@
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { dataBase } from './firebase_config';
 import firebase from "firebase";
+import TodoListItem from './Todo';
 
 function App() {
   const[todos, setTodos] = useState([]);
@@ -58,9 +59,11 @@ function App() {
           add
         </Button>
       </form>
+      <div style={{width: "90vw", maxWidth: "500px", marginTop: "24px" }}>
       {todos.map((todo) =>(
-        <p>{todo.todo}</p>
+        <TodoListItem todo={todo.todo} inprogress={todo.inprogress} id={todo.id}/>
         ))}
+        </div>
     </div>
   );
 }
