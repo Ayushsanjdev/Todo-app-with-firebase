@@ -10,6 +10,8 @@ function App() {
 
   const [todoInput, setTodoInput] = useState("");
   
+  
+
   useEffect(() => {
     getTodos();
   }, []);
@@ -31,6 +33,9 @@ function App() {
 
   function addTodo(e) {
     e.preventDefault();
+    if(todoInput === "") {
+    alert("please enter text!");
+  } else {
     dataBase.collection("todos").add({
       inprogress: true,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -38,6 +43,8 @@ function App() {
     });
 
     setTodoInput("");
+  }
+    
   }
 
   return (
