@@ -34,7 +34,9 @@ function App() {
   function addTodo(e) {
     e.preventDefault();
     if(todoInput === "") {
-    alert("PLEASE ENTER SOMETHING ATLEAST!!");
+      return (
+      <div className="error"><p style={{color: "red"}}>list cannot be empty!</p>;
+      </div>);
   } else {
     dataBase.collection("todos").add({
       inprogress: true,
@@ -62,8 +64,8 @@ function App() {
         setTodoInput(e.target.value)} id="standard-basic" label="Get it done" 
         style={{maxWidth: "400px", width: "90vw"}}/>
 
-        <Button variant="contained" type="submit" onClick={addTodo} style={{display: "none"}}>
-          add
+        <Button variant="contained" type="submit" onClick={addTodo} style={{display: ""}}>
+        ➕
         </Button>
       </form>
       <div style={{width: "90vw", maxWidth: "500px", marginTop: "24px" }}>

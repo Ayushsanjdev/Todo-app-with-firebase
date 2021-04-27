@@ -14,18 +14,18 @@ export default function TodoListItem({ todo, inprogress, id }) {
   }
 
   return (
-    <div style={{ display: "flex" , backgroundColor: "lightgrey"}}>
+    <div style={{ display: "flex" , backgroundColor: "#ddd", color: "#000", borderRadius: "1rem"}}>
       <ListItem>
         <ListItemText
           primary={todo}
-          secondary={inprogress ? "In Progress" : "Completed"}
+          secondary={inprogress ? "In Progress" : "Done"}
         />
       </ListItem>
 
       <Button onClick={toggleInProgress}>
         {inprogress ? "Done" : "UnDone"}
       </Button>
-      <Button onClick={deleteTodo}>X</Button>
+      <Button onClick={deleteTodo}>❌</Button>
     </div>
   );
 }
