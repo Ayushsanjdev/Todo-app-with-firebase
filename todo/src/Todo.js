@@ -23,7 +23,7 @@ export default function TodoListItem({ todo, inprogress, id }) {
       </ListItem>
 
       <Button onClick={toggleInProgress}>
-        {inprogress ? "Done" : "UnDone"}
+        {inprogress ? "☑️" : "UnDone"}
       </Button>
       <Button onClick={deleteTodo}>❌</Button>
     </div>

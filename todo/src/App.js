@@ -62,7 +62,7 @@ function App() {
       value={todoInput}
       onChange={(e) => 
         setTodoInput(e.target.value)} id="standard-basic" label="Get it done" 
-        style={{maxWidth: "400px", width: "90vw"}}/>
+        style={{textAlign: "center", maxWidth: "400px", width: "90vw", color: "#fff", backgroundColor: "#fff", margin: "0rem 0.2rem", borderRadius: "10px"}}/>
 
         <Button variant="contained" type="submit" onClick={addTodo} style={{display: ""}}>
         ➕
