@@ -35,7 +35,8 @@ function App() {
     e.preventDefault();
     if(todoInput === "") {
       return (
-      <div className="error"><p style={{color: "red"}}>list cannot be empty!</p>;
+      <div className="error">
+        <p>list cannot be empty!</p>;
       </div>);
   } else {
     dataBase.collection("todos").add({
@@ -62,9 +63,9 @@ function App() {
       value={todoInput}
       onChange={(e) => 
         setTodoInput(e.target.value)} id="standard-basic" label="Get it done" 
-        style={{textAlign: "center", maxWidth: "400px", width: "90vw", color: "#fff", backgroundColor: "#fff", margin: "0rem 0.2rem", borderRadius: "10px"}}/>
+        style={{textAlign: "center", verticalAlign: "middle", maxWidth: "400px", width: "80vw", color: "#fff", backgroundColor: "#fff", margin: "0rem 1rem", borderRadius: "5px"}}/>
 
-        <Button variant="contained" type="submit" onClick={addTodo} style={{display: ""}}>
+        <Button variant="contained" type="submit" onClick={addTodo} style={{display: "", padding: "10px 5px"}}>
         ➕
         </Button>
       </form>
